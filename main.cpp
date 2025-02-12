@@ -14,6 +14,7 @@ int main()
 
 void GiveOptions()
 {
+    std::cout << std::endl;
     std::cout << "Welcome to your To-Do List!" << std::endl;
     std::cout << "Here are some options:" << std::endl;
     std::cout << "1. View your To-Do List" << std::endl;
@@ -27,7 +28,7 @@ void HandleOptionInput()
 {
     int choice;
     std::cin >> choice;
-
+    std::cout << std::endl;
     switch (choice)
     {
     case 1:

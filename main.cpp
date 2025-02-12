@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 
 void GiveOptions();
 void HandleOptionInput();
@@ -27,13 +28,25 @@ void HandleOptionInput()
     switch (choice)
     {
     case 1:
+    {
+
         GiveOptions();
         HandleOptionInput();
         break;
+    }
     case 2:
+    {
+        std::ofstream file;
+        std::cout << "Insert a task: ";
+        std::string contentToAdd;
+        std::getline(std::cin >> std::ws, contentToAdd);
+        file.open("tasks.txt", std::ios::app);
+        file << contentToAdd << '\n';
+        file.close();
         GiveOptions();
         HandleOptionInput();
         break;
+    }
     case 3:
         GiveOptions();
         HandleOptionInput();

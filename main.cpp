@@ -20,6 +20,7 @@ void GiveOptions()
     std::cout << "2. Add a Task" << std::endl;
     std::cout << "3. Erase all tasks" << std::endl;
     std::cout << "4. Quit" << std::endl;
+    std::cout << std::endl;
 }
 
 void HandleOptionInput()
@@ -47,6 +48,7 @@ void HandleOptionInput()
         {
             std::cout << "Unable to find tasks. Please try to add a task and check again!" << std::endl;
         }
+        std::cout << std::endl;
         GiveOptions();
         HandleOptionInput();
         break;
@@ -66,7 +68,9 @@ void HandleOptionInput()
     }
     case 3:
     {
+        std::cout << "Removed all tasks!" << std::endl;
         remove("tasks.txt");
+        std::cout << std::endl;
         GiveOptions();
         HandleOptionInput();
         break;

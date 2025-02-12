@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 
 void GiveOptions();
 void HandleOptionInput();
@@ -29,7 +30,22 @@ void HandleOptionInput()
     {
     case 1:
     {
-
+        std::string line;
+        std::string contentToSay;
+        std::ifstream file("tasks.txt");
+        if (file.is_open())
+        {
+            while (std::getline(file, line))
+            {
+                contentToSay += "- " + line + '\n';
+            }
+            file.close();
+            std::cout << contentToSay << std::endl;
+        }
+        else
+        {
+            std::cout << "Unable to find tasks. Please try to add a task and check again!" << std::endl;
+        }
         GiveOptions();
         HandleOptionInput();
         break;

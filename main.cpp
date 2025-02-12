@@ -32,6 +32,7 @@ void HandleOptionInput()
     {
     case 1:
     {
+        std::cout << "Your Tasks: " << std::endl;
         std::string line;
         std::string contentToSay;
         std::ifstream file("tasks.txt");

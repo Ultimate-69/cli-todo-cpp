@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <stdio.h>
 
 void GiveOptions();
 void HandleOptionInput();
@@ -64,9 +65,12 @@ void HandleOptionInput()
         break;
     }
     case 3:
+    {
+        remove("tasks.txt");
         GiveOptions();
         HandleOptionInput();
         break;
+    }
     case 4:
         std::cout << "Quitting..." << std::endl;
         exit(0);
